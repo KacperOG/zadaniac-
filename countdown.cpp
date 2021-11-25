@@ -1,29 +1,21 @@
-﻿// Gra w odgadywanie liczb, program generuje losowo liczby z przedziału 1-100
+﻿// Program odlicza w dol od liczby podanej jako argumen przy wywolaniu programu
 #include <iostream>
-#include <random>
-
+#include <string>
 using namespace std;
 int liczba;
-std::random_device rd;
-std::uniform_int_distribution <int > l100(1, 100);
+#include <iostream>
 
-int main()
+auto for_loop(int const init, int const limit) -> void
 {
-    cout << "A guessing game for numbers from 1 to 100 \n";
-    auto const x = l100(rd); // drow a number
-    // cout << x << endl; // display the drown number
-    do {
-        cout << "guess: "; cin >> liczba;
-        if (x == liczba) {
-            std::cout << "just right \n";
-        }
-        else if (x > liczba) {
-            std::cout << "too small \n";
-        }
-        else if (x < liczba) {
-            std::cout << " to big .\n";
-        }
-    } while (!(x == liczba));
-    return 0;
+    for (auto i = init; i <= limit; ++i) {
+        std::cout << limit - i << "..." << '\n';
+    }
+}
 
+int main(int argc, char* argv[])
+{
+    liczba = stoi(argv[1]); // Konwersja typów char => int, znków na liczbę
+    for_loop(0, liczba);
+
+    return 0;
 }

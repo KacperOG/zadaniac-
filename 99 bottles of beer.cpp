@@ -1,7 +1,6 @@
 ﻿// Program "99 Bottles of beer"
 #include <iostream>
 #include <string>
-using namespace std;
 int liczba;
 #include <iostream>
 

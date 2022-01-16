@@ -1,0 +1,29 @@
+#include <iostream>
+int liczba=0;
+int main()
+{
+    std::cin >> liczba;
+    // Petla iteruje gorna czesc strzalki
+    for (int i = 1; i <= liczba; i++) {
+        // petla rysuje znaki "#"
+        for (int n = 1; n <=i; n++) {
+            std::cout << "#";
+        }
+        // petla dopelnia linie znakami "-"
+        for (int n = liczba - i-1; n >= 0; n--) {
+            std::cout << "-";
+        }
+       std::cout << '\n';
+    }
+    // Petla iteruje dolna czesc strzalki, reszta jak wyzej
+    for (int i = 1; i <= liczba - 1; i++) {
+        for (int m = 1; m <= liczba-i ; m++) {
+            std::cout << "#";
+        }
+        for (int m = 1; m <= i; m++) {
+            std::cout << "-";
+        }
+        std::cout << '\n';
+    }
+    return 0;
+}

@@ -1,0 +1,42 @@
+// program echo(1)
+#include <iostream>
+using namespace std;
+string par;
+int main(int argc, char* argv[])
+{
+    par = argv[1]; // przyporządkowanie wartości parametru mozliwe wartości -r, -l, -n, -rl
+ 
+    if (par=="-n")
+    {
+    for (auto i = 1; i < argc; ++i)
+        std::cout << argv[i] << " ";
+    }
+    else if (par == "-r") // odwrotna kolejnosc
+    {
+        for (auto i = 1; i < argc; ++i) {
+            std::cout << argv[argc - i] << " ";
+        }
+    }
+    else if (par == "-l") // w oddzielnej lini
+    {
+        for (auto i = 1; i < argc; ++i)
+            std::cout << argv[i] << '\n';
+    }
+    else if ((par == "-lr") or (par == "-rl"))
+    {
+        for (auto i = 1; i < argc; ++i)
+            std::cout << argv[argc - i] << '\n';
+    }
+    else if ((par == "-rn") or (par == "-nr"))
+    {
+        for (auto i = 1; i < argc; ++i)
+            std::cout << argv[argc - i] << " ";
+    }
+    else
+    {
+        for (auto i = 1; i < argc; ++i)
+            std::cout << argv[i] << " ";
+        std::cout << '\n';
+    }
+ return 0;
+}

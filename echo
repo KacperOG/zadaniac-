@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 string par;
-int main(int argc, char* argv[])
+int main(int argc, char* argv[]) //argc-zmnienna przechowująca liczbę argumentów
 {
     par = argv[1]; // przyporządkowanie wartości parametru mozliwe wartości -r, -l, -n, -rl
  

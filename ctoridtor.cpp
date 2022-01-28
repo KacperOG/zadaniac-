@@ -1,24 +1,24 @@
 #include <iostream>
 
-struct dstr //stuktura o nazwie dstr
+struct dstr 
 {
-    std::string ds1; //random pole1
-    std::string ds2; //random pole2
+    std::string ds1; 
+    std::string ds2; 
 
-    dstr(std::string a, std::string b){ //konstruktor i wkladamy do srodka zmienne (stwarza obiekt)
-        ds1 = a; //przypisanie zmiennych z konstruktora
+    dstr(std::string a, std::string b){ 
+        ds1 = a; 
         ds2 = b;
     }
-    ~dstr(){ //destruktor- niszczy strukta
-        std::cout << ds1 << "\n"; //przypisanie zmiennych z dekonstruktora
+    ~dstr(){ 
+        std::cout << ds1 << "\n";
         std::cout << ds2 << "\n";
-        std::cout << "DESTRUCTION!"; //wypisuje destruction
+        std::cout << "DESTRUCTION!"; 
     }
 };
 
 
 auto main()-> int
 {
-    auto ndstr = dstr("2", "1"); //nowa struktura przechodzi do dstr i potem do ~dstr
+    auto ndstr = dstr("2", "1"); 
     return 0;
 }
